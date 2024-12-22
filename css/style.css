@@ -1,0 +1,569 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar {
+    background-color: #333;
+    padding: 10px 0;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .navbar-logo {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .navbar-menu {
+    list-style: none;
+    display: flex;
+  }
+  
+  .navbar-menu li {
+    margin-right: 20px;
+  }
+  
+  .navbar-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .navbar-menu a:hover {
+    color: #FFD700; /* Golden color on hover */
+  }
+  
+  .navbar-auth a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+  }
+  
+  .navbar-auth a:hover {
+    color: #FFD700;
+  }
+  
+  /* Mobile menu icon - hidden by default */
+  .mobile-menu-icon {
+    display: none;
+    cursor: pointer;
+  }
+  
+  /* When the screen is smaller than 768px (tablet and mobile devices) */
+  @media screen and (max-width: 768px) {
+    .navbar-menu {
+      display: none; /* Hide the menu by default on mobile */
+      flex-direction: column;
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    .navbar-menu li {
+      margin-right: 0;
+      margin-bottom: 10px;
+      text-align: center;
+      width: 100%;
+    }
+  
+    .navbar-menu a {
+      font-size: 18px;
+      padding: 10px;
+      display: block;
+      width: 100%;
+    }
+  
+    .mobile-menu-icon {
+      display: block; /* Show the hamburger icon */
+    }
+  
+    .navbar-container {
+      flex-direction: column;
+    }
+  
+    /* Show the menu when the hamburger icon is clicked */
+    .navbar-menu.active {
+      display: flex;
+    }
+  
+    .navbar-auth {
+      margin-top: 10px;
+    }
+  }
+  /* Hero Section */
+.hero {
+    position: relative;
+    height: 500px; /* Default height */
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Image behind text */
+  }
+  
+  .hero h1 {
+    font-size: 50px;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Optional: add text shadow for better readability */
+  }
+  
+  .hero p {
+    font-size: 20px;
+    margin: 15px 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Optional: add text shadow for better readability */
+  }
+  
+  .cta-button {
+    padding: 15px 30px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 4px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  .cta-button:hover {
+    background-color: #218838;
+  }
+  
+  /* Mobile and Tablet Responsive Styling */
+  @media screen and (max-width: 768px) {
+    /* Reduce font sizes for smaller screens */
+    .hero h1 {
+      font-size: 30px;
+    }
+  
+    .hero p {
+      font-size: 16px;
+    }
+  
+    .cta-button {
+      padding: 12px 25px;
+      font-size: 16px;
+    }
+  
+    /* Adjust the hero image to fit small screens */
+    .hero-image {
+      object-fit: cover;
+      height: 300px; /* Reduced height for smaller screens */
+    }
+  
+    /* Stack content vertically for smaller screens */
+    .hero {
+      flex-direction: column;
+      padding: 10px;
+      height: auto; /* Adjust height to fit content */
+    }
+  
+    /* Center the content properly */
+    .hero-content {
+      text-align: center;
+      padding: 20px 0;
+    }
+  }
+  
+  /* Small mobile screen (e.g., smartphones) */
+  @media screen and (max-width: 480px) {
+    /* Further reduce font sizes for very small screens */
+    .hero h1 {
+      font-size: 24px;
+    }
+  
+    .hero p {
+      font-size: 14px;
+    }
+  
+    .cta-button {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+  
+    .hero-image {
+      object-fit: cover;
+      height: 250px; /* Further reduced height for very small screens */
+    }
+  }
+  /* General Styles */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 50px;
+  }
+
+  p {
+    text-align: center;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 900px;
+  }
+
+  /* Donate Section Styles */
+  .donate-section {
+    padding: 50px 20px;
+  }
+
+  .donate-heading {
+    font-size: 2.5em;
+    color: #007b5f;
+    margin-bottom: 20px;
+  }
+
+  .donate-description {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+  }
+
+  .donate-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 42px;
+    justify-items: center;
+  }
+
+  /* Card Flip Effect */
+  .donate-card {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    max-width: 350px;
+    perspective: 1000px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .donate-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+  }
+
+  .donate-card:hover .donate-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .donate-card-front,
+  .donate-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  /* Front of the Card */
+  .donate-card-front {
+    background-color: #fff;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: background 1s ease-in-out;
+  }
+
+  .donate-card:hover .donate-card-front {
+    background: linear-gradient(to right, rgba(255, 165, 0, 0.8), rgba(0, 255, 255, 0.8));
+  }
+
+  .donate-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .card-content {
+    color: #fff;
+    text-align: center;
+    padding-top: 15px;
+  }
+
+  .card-content h3 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+  }
+
+  .card-content p {
+    font-size: 1.1em;
+  }
+
+  .donate-btn {
+    padding: 12px 20px;
+    background-color: #ff8c00;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+  }
+
+  .donate-btn:hover {
+    background-color: #cc7000;
+  }
+
+  /* Back of the Card */
+  .donate-card-back {
+    background-color: #007b5f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    transform: rotateY(180deg);
+    padding: 20px;
+  }
+
+  .donate-card-back h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+  }
+
+  .donate-card-back p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+  }
+
+  .donate-btn-back {
+    padding: 12px 20px;
+    background-color: #ff8c00;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+  }
+
+  .donate-btn-back:hover {
+    background-color: #cc7000;
+  }
+  /* General Section Styling */
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 36px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.section p {
+  font-size: 18px;
+  color: #7f8c8d;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+/* Flexbox layout for alignment */
+.section-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px; /* Space between cards */
+}
+
+.section-card {
+  flex: 1;
+  min-width: 300px; /* Ensures proper wrapping on smaller screens */
+  max-width: 30%; /* Maintains consistent sizing */
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-card h3 {
+  font-size: 28px;
+  color: #34495e;
+  margin-bottom: 10px;
+}
+
+.section-card p {
+  font-size: 16px;
+  color: #7f8c8d;
+  line-height: 1.6;
+}
+
+.section-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section h2 {
+    font-size: 28px;
+  }
+
+  .section p {
+    font-size: 16px;
+  }
+
+  .section-content {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align when stacked */
+  }
+
+  .section-card {
+    max-width: 100%; /* Full width on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .section h2 {
+    font-size: 24px;
+  }
+
+  .section p {
+    font-size: 14px;
+  }
+
+  .section-card h3 {
+    font-size: 20px;
+  }
+
+  .section-card p {
+    font-size: 14px;
+  }
+}
+/* FAQ Section */
+.faq-section {
+  padding: 60px 20px;
+  background-color: #f4f4f4;
+  text-align: center;  /* Centers the text in the section */
+  display: flex;
+  flex-direction: column;  /* Stack elements vertically */
+  justify-content: center;  /* Vertically center the FAQ container */
+  align-items: center;  /* Horizontally center the FAQ container */
+  height: 100vh;  /* Ensure the FAQ section takes full viewport height */
+  margin: 0 auto;  /* Center the FAQ section horizontally */
+}
+
+.faq-container {
+  max-width: 800px;  /* Limit the width of the FAQ container */
+  margin: 0 auto;  /* Center the container horizontally */
+}
+
+.faq-section h2 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.faq-section p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.faq {
+  text-align: left;  /* Align questions to the left */
+  margin-bottom: 20px;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.faq-question {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;  /* Align questions to the left */
+  font-size: 18px;
+  color: #007b5f;
+  padding: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+  background-color: #f0f0f0;
+}
+
+.faq-icon {
+  font-size: 24px;
+  color: #007b5f;
+  transition: transform 0.3s;
+}
+
+.faq-answer {
+  display: none;
+  padding: 15px;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);  /* Turns "+" into "x" */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .faq-section h2 {
+    font-size: 28px;
+  }
+
+  .faq-section p {
+    font-size: 16px;
+  }
+
+  .faq-question {
+    font-size: 16px;
+  }
+
+  .faq-answer {
+    font-size: 14px;
+  }
+}
